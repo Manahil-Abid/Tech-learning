@@ -1,0 +1,259 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style files/style.css">
+    <title>Student Form</title>
+    
+      <style>
+        body {
+          background: linear-gradient(135deg, #e4e2e2, #cbd6e2);
+          margin: 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          animation: backgroundFade 10s ease-in-out infinite alternate;
+        }
+    
+        @keyframes backgroundFade {
+          0% { background: linear-gradient(135deg, hsl(214, 100%, 68%), #cbd6e2); }
+          100% { background: linear-gradient(135deg, hsl(214, 100%, 68%), #f3f4f6); }
+        }
+    
+        #idCard {
+          background: #fff;
+          border: 2px solid #007bff;
+          border-radius: 15px;
+          padding: 30px 18px;
+          width: 220px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          animation: fadeInScale 0.8s ease-in-out;
+          transition: transform 0.3s ease;
+        }
+    
+        @keyframes fadeInScale {
+          0% { transform: scale(0.95); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+    
+        /* #idCard:hover {
+          transform: scale(1.02);
+        }
+     */
+        #idCard h2 {
+          color: #007bff;
+          margin-bottom: 15px;
+          text-align: center;
+          font-size: 18px;
+          animation: slideDown 0.6s ease-out;
+        }
+    
+        @keyframes slideDown {
+          from { transform: translateY(-20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        #printButton{
+          width: 60%;
+          font-size: 2.90rem;
+      } 
+        #idCard img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          margin: 0 auto 12px auto;
+          border: 3px solid transparent;
+          background: linear-gradient(white, white) padding-box,
+                      linear-gradient(45deg, #007bff, #00c6ff, #007bff) border-box;
+          background-size: 300% 300%;
+          animation: imageBorderMove 20s linear infinite;
+          display: block;
+        }
+    
+        @keyframes imageBorderMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+    
+        #idCard p {
+          margin: 8px 0;
+          font-size: 14px;
+          color: #333;
+          text-align: center;
+          animation: fadeInText 1s ease-in-out;
+        }
+    
+        @keyframes fadeInText {
+          0% { opacity: 0; transform: translateY(10px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+    
+        #idCard button {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 14px;
+          margin: 16px auto 0;
+          display: block;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+    
+        #idCard button:hover {
+          background-color: #0056b3;
+          transform: scale(1.05);
+        }
+    
+        @media (max-width: 480px) {
+          #idCard {
+            padding: 18px 12px;
+            width: 85%;
+            max-width: 200px;
+          }
+    
+          #idCard h2 {
+            font-size: 16px;
+          }
+    
+          #idCard img {
+            width: 65px;
+            height: 65px;
+          }
+    
+          #idCard p {
+            font-size: 12px;
+          }
+    
+          #idCard button {
+            font-size: 12px;
+            padding: 6px 12px;
+          }
+        }
+      </style>
+    </head>
+    <body>
+
+
+    <div id="formPage">
+        <h2>Student Form</h2>
+        <form id="studentForm">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+            <div>
+                <label for="batch">Batch</label>
+                <input type="text" id="batch" value="Batch 1" readonly>
+            </div>
+            <div>
+                <label for="course">Course</label>
+                <select id="course" required>
+                    <option value="Web & App Development">Select Course</option>
+                    <option value="Web & App Development">Web & App Development</option>
+                    <option value="Data Science & AI">Data Science & AI</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                </select>
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="Address" required>
+            </div>
+            <div>
+                <label for="qualification">Last Qualification</label>
+                <input type="text" id="qualification" placeholder="Last Qualification" required>
+            </div>
+            <div>
+                <label for="laptop">Do You Have Laptop?</label>
+                <input type="text" id="laptop" placeholder="Yes/No" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div>
+                <label for="time">Timing</label>
+                <select id="time" required>
+                    <option value="Web & App Development">Select Timing</option>
+                    <option value="Web & App Development">Mon,Tues & Wed ( 01:00pm-03:00pm )</option>
+                    <option value="Data Science & AI">Thurs & Fri( 01:00pm-03:00pm )</option>
+                    <option value="Cyber Security">Sat & Sun ( 01:00pm-03:00pm) </option>
+                </select>
+            </div>
+            <div class="full-width">
+                <label for="photo">Upload Photo</label>
+                <input type="file" id="photo" accept="image/*" required>
+            </div>
+            <div class="full-width">
+                <button type="submit" id="form-btn" >Submit</button>
+                <button type="button" onclick="window.location.href='html files/index.html'" id="logout-btn" id="form-btn">Logout</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="idCard" style="display: none;" >
+      <!-- <img src="" alt="" id="l_ogo"> -->
+      <h2 style="color: black;">Tech_ <span style="color: #007bff;">Learning</span></h2>
+      <h2  style="color: black;">ID Card</h2>
+        <img id="cardPhoto" src="" alt="Uploaded Photo" style="width: 100px; height: 100px;"/>
+        <div class="wordSpacing">
+        <p><strong>Name:</strong> <span id="cardName"></span></p>
+        <p><strong>Batch:</strong> <span id="cardBatch"></span></p>
+        <p><strong>Course:</strong> <span id="cardCourse"></span></p>
+        <p><strong>Roll Number:</strong> <span id="cardRollNumber"></span></p>
+        <button id="printButton">Print ID Card</button>
+    </div>
+  </div>
+    <script>
+    
+        function generateRollNumber() {
+        return Math.floor(Math.random() * 1000000); // Generates a random number between 0 and 99999
+    }
+
+        document.getElementById('studentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get values from the form
+            const name = document.getElementById('name').value;
+            const batch = document.getElementById('batch').value;
+            const course = document.getElementById('course').value;
+            const address = document.getElementById('address').value; // Address variable added
+            const rollNumber = generateRollNumber(); // Increment and get the roll number
+
+            // Set values in the ID card
+            document.getElementById('cardName').innerText = name;
+            document.getElementById('cardBatch').innerText = batch;
+            document.getElementById('cardCourse').innerText = course;
+            document.getElementById('cardRollNumber').innerText = rollNumber; // Set the generated roll number
+
+            // Get the uploaded photo
+            const photoInput = document.getElementById('photo');
+            const file = photoInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                document.getElementById('cardPhoto').src = e.target.result; // Set the ID card photo to the uploaded image
+            };
+
+            if (file) {
+                reader.readAsDataURL(file); // Read the uploaded file as a data URL
+            }
+
+            // Show the ID card
+            document.getElementById('formPage').style.display = 'none';
+            document.getElementById('idCard').style.display = 'block';
+        });
+
+        document.getElementById('printButton').addEventListener('click', function() {
+            window.print();
+        });
+    </script>
+    <script type="module" src="../script.js"></script>
+</body>
+</html>
+

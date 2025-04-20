@@ -1,0 +1,237 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 20px;
+  color: #fff;
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #ddd;
+}
+
+.navbar .menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+/* Page Header */
+
+/* Course Card */
+.course-card {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Inline Header Layout */
+.course-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Course Title */
+.course-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Course Date */
+.course-date {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.course-date span {
+  font-size: 16px;
+  margin-left: 5px;
+  color: #555;
+}
+
+/* Course Schedule */
+.course-schedule {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Enroll Button */
+.enroll-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.enroll-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Course Info Section */
+.course-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.info-box {
+  flex: 1 1 calc(25% - 20px);
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.info-box strong {
+  display: block;
+  font-size: 18px;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .info-box {
+      flex: 1 1 calc(33.33% - 15px); /* Adjust for medium screens */
+  }
+  .course-card {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #007bff;
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+  }
+  .course-card {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .course-header {
+      flex-direction: column;
+  }
+
+  .info-box {
+      flex: 1 1 calc(50% - 10px); /* Adjust for smaller screens */
+  }
+
+  .course-title {
+      font-size: 22px;
+  }
+
+  .course-date {
+      font-size: 18px;
+  }
+
+  .course-schedule {
+      font-size: 16px;
+  }
+
+  .enroll-button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-card {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+
+  .info-box {
+      flex: 1 1 100%; /* Full width for very small screens */
+  }
+
+  .page-header {
+      font-size: 24px;
+  }
+
+  .course-title {
+      font-size: 20px;
+  }
+
+  .course-date {
+      font-size: 16px;
+  }
+
+  .course-schedule {
+      font-size: 15px;
+  }
+}
